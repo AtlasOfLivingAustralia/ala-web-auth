@@ -1,14 +1,14 @@
 {
-  "name": "ala-node-auth",
+  "name": "ala-web-auth",
   "version": "0.0.1",
   "description": "A web / node.js library for handling Authentication with the ALA",
   "main": "dist/index.js",
-  "repository": "https://github.com/AtlasOfLivingAustralia/ala-node-auth",
+  "repository": "https://github.com/AtlasOfLivingAustralia/ala-web-auth",
   "author": "Jack Brinkman <jack.brinkman@csiro.au>",
   "license": "Apache-2.0",
   "private": false,
   "bugs": {
-    "url": "https://github.com/AtlasOfLivingAustralia/ala-node-auth/issues"
+    "url": "https://github.com/AtlasOfLivingAustralia/ala-web-auth/issues"
   },
   "scripts": {
     "develop": "nodemon src/index.ts",
