@@ -16,7 +16,7 @@
 
 ## Installation
 
-To use `ala-web-auth`, simply run `yarn add ala-web-auth` / `npm i ala-web-auth`.
+To use `ala-web-auth`, simply run `yarn add ala-web-auth` or `npm i ala-web-auth` with NPM.
 
 ## Usage
 
@@ -24,10 +24,12 @@ To use `ala-web-auth`, simply run `yarn add ala-web-auth` / `npm i ala-web-auth`
 
 ## Contributing
 
-To setup your environment for `ala-web-auth` contributions, the following is recommended.
+To setup your environment for `ala-web-auth` contributions, the following steps are recommended:
 
-1. Download & Install [Visual Studio Code](https://code.visualstudio.com/)
-2. Install the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) VSCode extensions
-3. Clone the `ala-web-auth` repository
-4. Install the project dependencies with the `yarn` / `npm install` command
-5. Start developing using `yarn develop` / `npm develop` (saved changes will automatically reload `src/index.ts`)
+1. Download [Node.js v16](https://nodejs.org/en/) (easilly manage multiple versions with [NVM](https://github.com/nvm-sh/nvm))
+2. Download [Yarn](https://yarnpkg.com/) package manager (optional)
+3. Download [Visual Studio Code](https://code.visualstudio.com/)
+4. Install the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) VSCode extensions
+5. Clone the `ala-web-auth` repository
+6. Install the project dependencies with the `yarn` / `npm install` command
+7. Start developing using `yarn develop` / `npm develop` (saved changes will automatically reload `src/index.ts`)
