@@ -1,0 +1,26 @@
+{
+  "prod": {
+    "auth": {
+      "endpoint": "auth.ala.org.au",
+      "routes": {
+        "authorize": "/authorize"
+      }
+    }
+  },
+  "test": {
+    "auth": {
+      "endpoint": "auth-test.dev.ala.org.au",
+      "routes": {
+        "authorize": "/cas/oidc/oidcAuthorize"
+      }
+    }
+  },
+  "dev": {
+    "auth": {
+      "endpoint": "auth.dev.ala.org.au",
+      "routes": {
+        "authorize": "/cas/oidc/oidcAuthorize"
+      }
+    }
+  }
+}

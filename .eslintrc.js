@@ -10,6 +10,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
     'prettier'
   ],
   parser: '@typescript-eslint/parser',
@@ -24,6 +25,12 @@ module.exports = {
       'error',
       {
         endOfLine: 'auto'
+      }
+    ],
+    'import/extensions': [
+      'error',
+      {
+        ts: 'never'
       }
     ]
   },

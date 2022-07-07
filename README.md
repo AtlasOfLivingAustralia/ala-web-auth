@@ -18,9 +18,9 @@
 
 To use `ala-web-auth`, simply run `yarn add ala-web-auth` or `npm i ala-web-auth` with NPM.
 
-## Usage
+## Documentation / Usage
 
-> TODO: Usage examples
+> TODO: Docs / Usage examples
 
 ## Contributing
 
