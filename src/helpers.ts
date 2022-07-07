@@ -12,7 +12,7 @@ interface OIDCAuthClient {
 }
 
 interface OIDCAuthResult {
-  token: string;
+  accessToken: string;
   expiresIn: number;
 }
 
@@ -31,5 +31,20 @@ function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
   return `https://${endpoint}/${routes.authorize}?${params}`;
 }
 
+// Safe-parse functionality for JSON
+const getJson = (input: string) => {
+  try {
+    return JSON.parse(input);
+  } catch (error) {
+    return null;
+  }
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export { getAuthUrl, OIDCAuthClient, OIDCAuthClientMode, OIDCAuthResult };
+export {
+  getAuthUrl,
+  getJson,
+  OIDCAuthClient,
+  OIDCAuthClientMode,
+  OIDCAuthResult
+};
