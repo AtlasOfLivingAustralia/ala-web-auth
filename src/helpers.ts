@@ -21,8 +21,10 @@ function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
 
   // Stringify the query parameters
   const params = query.stringify({
+    response_type: 'token',
+    scope: client.scope,
     client_id: client.clientId,
-    redirectUri
+    redirect_uri: redirectUri
   });
 
   // Redirect the user
