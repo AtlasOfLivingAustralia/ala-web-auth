@@ -26,7 +26,7 @@ function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
   });
 
   // Redirect the user
-  return `https://${endpoint}/${routes.authorize + params}`;
+  return `https://${endpoint}/${routes.authorize}?${params}`;
 }
 
 // eslint-disable-next-line import/prefer-default-export

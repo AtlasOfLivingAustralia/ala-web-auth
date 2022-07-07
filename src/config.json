@@ -3,15 +3,15 @@
     "auth": {
       "endpoint": "auth.ala.org.au",
       "routes": {
-        "authorize": "/authorize"
+        "authorize": "authorize"
       }
     }
   },
   "test": {
     "auth": {
-      "endpoint": "auth-test.dev.ala.org.au",
+      "endpoint": "auth-test.ala.org.au",
       "routes": {
-        "authorize": "/cas/oidc/oidcAuthorize"
+        "authorize": "cas/oidc/oidcAuthorize"
       }
     }
   },
@@ -19,7 +19,7 @@
     "auth": {
       "endpoint": "auth.dev.ala.org.au",
       "routes": {
-        "authorize": "/cas/oidc/oidcAuthorize"
+        "authorize": "cas/oidc/oidcAuthorize"
       }
     }
   }

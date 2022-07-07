@@ -3,8 +3,7 @@ import {
   getAuthUrl,
   // Types
   OIDCAuthClient,
-  OIDCAuthClientMode,
-  OIDCAuthResult
+  OIDCAuthClientMode
 } from './helpers';
 
 /*
@@ -30,25 +29,4 @@ const signInWithRedirect = (
   redirectUri: string
 ): void => window.location.replace(getAuthUrl(client, redirectUri));
 
-// Redirects the user for authentication
-const signInWithTab = async (
-  client: OIDCAuthClient,
-  redirectUri: string
-): Promise<OIDCAuthResult> =>
-  new Promise((resolve, reject) => {
-    const url = getAuthUrl(client, redirectUri);
-    const wnd = window.open(url);
-
-    if (wnd) {
-      wnd.focus();
-      wnd.addEventListener('load', () => console.log(window.location));
-    } else reject(new Error('Failed to open new tab'));
-  });
-
-export {
-  getAuthUrl,
-  getClient,
-  getAuthToken,
-  signInWithRedirect,
-  signInWithTab
-};
+export { getAuthUrl, getClient, getAuthToken, signInWithRedirect };

@@ -11,7 +11,7 @@
     "url": "https://github.com/AtlasOfLivingAustralia/ala-web-auth/issues"
   },
   "scripts": {
-    "develop": "nodemon src/index.ts",
+    "develop": "webpack --watch",
     "lint": "eslint src/**",
     "test": "jest",
     "build": "webpack"
@@ -30,7 +30,6 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^28.1.2",
-    "nodemon": "^2.0.18",
     "prettier": "^2.7.1",
     "ts-jest": "^28.0.5",
     "ts-loader": "^9.3.1",
