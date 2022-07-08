@@ -16,6 +16,11 @@ interface OIDCAuthResult {
   expiresIn: number;
 }
 
+/**
+ * Generates a URL to use for implicit authentication.
+ * @param client The client configuration to be used for authentication
+ * @param redirectUri The URI to redirect to upon authentication
+ */
 function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
   const { endpoint, routes } = config[client.mode].auth;
 
@@ -31,7 +36,10 @@ function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
   return `https://${endpoint}/${routes.authorize}?${params}`;
 }
 
-// Safe-parse functionality for JSON
+/**
+ * A helper function which safely parses JSON strings
+ * @param input The input JSON string to parse
+ */
 const getJson = (input: string) => {
   try {
     return JSON.parse(input);

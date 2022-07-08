@@ -24,13 +24,17 @@ const getClient = (
   mode
 });
 
-// Retireves the authentication from the local storage, or null if none exists.
+/**
+ * Retireves the authentication from the local storage, or null if none exists.
+ */
 const getToken = (): OIDCAuthResult | null =>
   getJson(
     window.localStorage.getItem('ala-auth-token') || ''
   ) as OIDCAuthResult;
 
-// Attempts to parse the URL and retireve an auth token after redirect
+/**
+ * Attempts to parse the URL and retireve an auth token after redirect
+ */
 const getRedirectResult = (): OIDCAuthResult | null => {
   // If an access token was provided in the URL
   if (window.location.href.includes('access_token')) {
@@ -53,12 +57,19 @@ const getRedirectResult = (): OIDCAuthResult | null => {
   return getToken();
 };
 
-// Redirects the user for authentication
+/**
+ * Redirects the user for authentication with ALA systems
+ * @param client The client configuration to be used for authentication
+ * @param redirectUri The URI to redirect to upon authentication
+ */
 const signInWithRedirect = (
   client: OIDCAuthClient,
   redirectUri: string
 ): void => window.location.replace(getAuthUrl(client, redirectUri));
 
+/**
+ * Signs the current user out
+ */
 const signOut = () => window.localStorage.removeItem('ala-auth-token');
 
 export { getClient, getToken, getRedirectResult, signInWithRedirect, signOut };
