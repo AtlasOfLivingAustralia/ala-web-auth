@@ -24,5 +24,8 @@ module.exports = {
   },
   experiments: {
     outputModule: true
+  },
+  externals: {
+    'query-string': 'query-string'
   }
 };
