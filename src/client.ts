@@ -13,7 +13,12 @@ import {
   PUBLIC AUTHENTICATION FUNCTIONS
 */
 
-// Creates a client object to use for authentication
+/**
+ * Creates a client configuration object to use for authentication
+ * @param clientId The ID of the OIDC client
+ * @param scope The scope to request during authentication
+ * @param mode Used for testing, can either be `prod` (default), `test` or `dev`
+ */
 const getClient = (
   clientId: string,
   scope: string[] = ['openid', 'email'],
