@@ -6,7 +6,7 @@
 
 ---
 
-> This package provides a web / node-based library for authenticating with the ALA
+> This package provides a utility library for authenticating with the ALA
 
 ## Features
 
@@ -20,7 +20,49 @@ To use `ala-web-auth`, simply run `yarn add ala-web-auth` or `npm i ala-web-auth
 
 ## Documentation / Usage
 
-> TODO: Docs / Usage examples
+### Basic Authentication
+
+```typescript
+import { getClient, signInWithRedirect } from 'ala-web-auth';
+
+// Firstly, create the OIDC client
+const client = getClient('oidc-test-client-id', ['openid', 'email']);
+
+// User will be redirected to the authentication page,
+// then back to the specified URL with the access token
+signInWithRedirect(client, 'http://localhost:3000');
+```
+
+### Handling Redirects
+
+Upon each page load, call the following function:
+
+```typescript
+import { getRedirectResult } from 'ala-web-auth';
+
+getRedirectResult();
+```
+
+This will parse the token supplied in the redirect URL (if it exists), and store it within the browser's local storage.
+
+For ease of use, the token is returned from the `getRedirectResult` function as an object of type `OIDCAuthResult`:
+
+```js
+{
+	accessToken: 'token-here',
+	expiresIn: 28800
+}
+```
+
+You can also retireve the token like so:
+
+```typescript
+import { getToken } from 'ala-web-auth';
+
+// Will return null if no token
+// has been stored via getRedirectResult()
+const token = getToken();
+```
 
 ## Contributing
 
