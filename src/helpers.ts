@@ -1,4 +1,4 @@
-import query from 'query-string';
+import queryString from 'query-string';
 
 // Import configuration file
 import config from './config.json';
@@ -20,7 +20,7 @@ function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
   const { endpoint, routes } = config[client.mode].auth;
 
   // Stringify the query parameters
-  const params = query.stringify({
+  const params = queryString.stringify({
     response_type: 'token',
     scope: client.scope,
     client_id: client.clientId,
