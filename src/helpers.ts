@@ -1,7 +1,19 @@
 import queryString from 'query-string';
 
-// Import configuration file
-import config from './config.json';
+interface OIDCAuthConfigEntry {
+  auth: {
+    endpoint: string;
+    routes: {
+      authorize: string;
+    };
+  };
+}
+
+interface OIDCAuthConfig {
+  prod: OIDCAuthConfigEntry;
+  test: OIDCAuthConfigEntry;
+  dev: OIDCAuthConfigEntry;
+}
 
 type OIDCAuthClientMode = 'prod' | 'test' | 'dev';
 
@@ -9,6 +21,7 @@ interface OIDCAuthClient {
   clientId: string;
   scope: string;
   mode: OIDCAuthClientMode;
+  config: OIDCAuthConfig;
 }
 
 interface OIDCAuthResult {
@@ -22,7 +35,7 @@ interface OIDCAuthResult {
  * @param redirectUri The URI to redirect to upon authentication
  */
 function getAuthUrl(client: OIDCAuthClient, redirectUri: string): string {
-  const { endpoint, routes } = config[client.mode].auth;
+  const { endpoint, routes } = client.config[client.mode].auth;
 
   // Stringify the query parameters
   const params = queryString.stringify({
@@ -54,5 +67,6 @@ export {
   getJson,
   OIDCAuthClient,
   OIDCAuthClientMode,
-  OIDCAuthResult
+  OIDCAuthResult,
+  OIDCAuthConfig
 };

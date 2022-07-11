@@ -1,4 +1,5 @@
 import queryString from 'query-string';
+import defaultConfig from './config.json';
 
 // Helper functions
 import {
@@ -6,7 +7,8 @@ import {
   getJson,
   OIDCAuthClient,
   OIDCAuthClientMode,
-  OIDCAuthResult
+  OIDCAuthResult,
+  OIDCAuthConfig
 } from './helpers';
 
 /*
@@ -22,11 +24,13 @@ import {
 const getClient = (
   clientId: string,
   scope: string[] = ['openid', 'email'],
-  mode: OIDCAuthClientMode = 'prod'
+  mode: OIDCAuthClientMode = 'prod',
+  config: OIDCAuthConfig = defaultConfig
 ) => ({
   clientId,
   scope: scope.join(' '),
-  mode
+  mode,
+  config
 });
 
 /**
