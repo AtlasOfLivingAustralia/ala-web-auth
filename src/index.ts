@@ -5,6 +5,7 @@ export {
   getAuthUrl,
   OIDCAuthClient,
   OIDCAuthClientMode,
+  OIDCAuthConfig,
   OIDCAuthResult
 } from './helpers';
 
