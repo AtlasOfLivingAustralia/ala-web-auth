@@ -1,6 +1,5 @@
 import { getClient, getAuthUrl } from '../src';
 import { getJson, OIDCAuthClientMode } from '../src/helpers';
-import config from '../src/config.json';
 
 test('getAuthUrl correct parameter generation', () => {
   const client = getClient('test-client-id');
@@ -17,7 +16,7 @@ test('getAuthUrl correct auth URL from config', () => {
     const client = getClient('test-client-id', ['openid', 'email'], mode);
     const url = getAuthUrl(client, 'http://localhost:3000');
 
-    expect(url).toContain(config[mode].auth.endpoint);
+    expect(url).toContain(client.config[mode].auth.endpoint);
   });
 });
 
@@ -30,4 +29,7 @@ test('getJson returns null on incorrect formatting', () => {
 
 test('getJson handles correct formatting', () => {
   expect(getJson('{"a": 24}')).toEqual(JSON.parse('{"a": 24}'));
+  expect(getJson('{"test": { "nested": true }}')).toEqual(
+    JSON.parse('{"test": { "nested": true }}')
+  );
 });
