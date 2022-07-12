@@ -1,6 +1,6 @@
 {
   "name": "@atlasoflivingaustralia/ala-web-auth",
-  "version": "1.0.0",
+  "version": "1.0.0-snapshot.1",
   "description": "A web / node.js library for handling Authentication with the ALA",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
