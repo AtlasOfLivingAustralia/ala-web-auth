@@ -82,10 +82,10 @@ const signInWithRedirect = (
 const signOut = () => window.localStorage.removeItem('ala-auth-token');
 
 export {
+  defaultConfig,
   getClient,
   getToken,
   getRedirectResult,
   signInWithRedirect,
-  signOut,
-  defaultConfig
+  signOut
 };

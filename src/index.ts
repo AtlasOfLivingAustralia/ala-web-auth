@@ -13,10 +13,10 @@ export {
 	Client Exports
 */
 export {
+  defaultConfig,
   getClient,
   getToken,
   getRedirectResult,
   signInWithRedirect,
-  signOut,
-  defaultConfig
+  signOut
 } from './client';
