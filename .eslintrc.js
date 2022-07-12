@@ -34,5 +34,13 @@ module.exports = {
       }
     ]
   },
-  ignorePatterns: ['webpack.config.js', 'dist/**', 'tsconfig.json']
+  ignorePatterns: ['webpack.config.js', 'dist/**', 'tsconfig.json'],
+  overrides: [
+    {
+      files: ['*.json'],
+      rules: {
+        'no-unused-expressions': 'off'
+      }
+    }
+  ]
 };
