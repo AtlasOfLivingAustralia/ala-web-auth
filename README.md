@@ -8,6 +8,15 @@
 
 > This package provides a utility library for authenticating with the ALA
 
+- [ALA Web Authentication](#ala-web-authentication)
+	- [Features](#features)
+	- [Installation](#installation)
+	- [Documentation / Usage](#documentation--usage)
+		- [Basic Authentication](#basic-authentication)
+		- [Handling Redirects](#handling-redirects)
+		- [Custom Configurations](#custom-configurations)
+	- [Contributing](#contributing)
+
 ## Features
 
 - Robust typings with `TypeScript`
@@ -62,6 +71,35 @@ import { getToken } from 'ala-web-auth';
 // Will return null if no token
 // has been stored via getRedirectResult()
 const token = getToken();
+```
+
+### Custom Configurations
+
+You can specify a custom auth API endpoint configuration object, of type `OIDCAuthConfig`, which has the following properties:
+
+```typescript
+interface OIDCAuthConfigEntry {
+  auth: {
+    endpoint: string;
+    routes: {
+      authorize: string;
+    };
+  };
+}
+
+interface OIDCAuthConfig {
+  prod: OIDCAuthConfigEntry;
+  test: OIDCAuthConfigEntry;
+  dev: OIDCAuthConfigEntry;
+}
+```
+
+To use a custom configuration, pass it into the `getClient()` function like so:
+
+```typescript
+const client = getClient('oidc-test-client-id', ['openid', 'email'], 'prod', {
+  // Your custom config here
+});
 ```
 
 ## Contributing
