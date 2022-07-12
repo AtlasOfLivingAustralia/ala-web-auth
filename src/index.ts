@@ -17,5 +17,6 @@ export {
   getToken,
   getRedirectResult,
   signInWithRedirect,
-  signOut
+  signOut,
+  defaultConfig
 } from './client';

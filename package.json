@@ -6,7 +6,6 @@
   "repository": "https://github.com/AtlasOfLivingAustralia/ala-web-auth",
   "author": "Jack Brinkman <jack.brinkman@csiro.au>",
   "license": "Apache-2.0",
-  "private": false,
   "bugs": {
     "url": "https://github.com/AtlasOfLivingAustralia/ala-web-auth/issues"
   },

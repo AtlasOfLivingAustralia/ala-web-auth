@@ -1,4 +1,4 @@
-import { getClient } from '../src';
+import { getClient, defaultConfig } from '../src';
 
 test('getClient has correct parameter fallbacks', () => {
   const client = getClient('test-client-id');
@@ -7,6 +7,7 @@ test('getClient has correct parameter fallbacks', () => {
   expect(client.clientId).toEqual('test-client-id');
   expect(client.mode).toEqual('prod');
   expect(client.scope).toEqual('openid email');
+  expect(client.config).toEqual(defaultConfig);
 });
 
 test('getClient concatinates scope correctly', () => {

@@ -4,3 +4,12 @@ dist
 
 # Yarn artifacts
 yarn-error.log
+
+# Yarn V2 Dependencies
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

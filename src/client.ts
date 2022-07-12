@@ -1,5 +1,5 @@
 import queryString from 'query-string';
-import defaultConfig from './config.json';
+import defaultConfig from './defaultConfig.json';
 
 // Helper functions
 import {
@@ -81,4 +81,11 @@ const signInWithRedirect = (
  */
 const signOut = () => window.localStorage.removeItem('ala-auth-token');
 
-export { getClient, getToken, getRedirectResult, signInWithRedirect, signOut };
+export {
+  getClient,
+  getToken,
+  getRedirectResult,
+  signInWithRedirect,
+  signOut,
+  defaultConfig
+};
