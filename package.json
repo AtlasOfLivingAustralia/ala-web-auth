@@ -3,17 +3,35 @@
   "version": "1.0.0",
   "description": "A web / node.js library for handling Authentication with the ALA",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/AtlasOfLivingAustralia/ala-web-auth",
   "author": "Jack Brinkman <jack.brinkman@csiro.au>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/AtlasOfLivingAustralia/ala-web-auth/issues"
   },
+  "keywords": [
+    "Browser",
+    "Web",
+    "ALA",
+    "Atlas of Living Autralia",
+    "Auth",
+    "Authentication",
+    "OIDC",
+    "OpenID",
+    "OpenID Connect"
+  ],
   "scripts": {
     "develop": "webpack --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint src/**",
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "files": [
     "dist/**/*"

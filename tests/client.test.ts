@@ -11,6 +11,6 @@ test('getClient has correct parameter fallbacks', () => {
 });
 
 test('getClient concatinates scope correctly', () => {
-  const client = getClient('test-client-id', ['openid', 'profile']);
-  expect(client.scope).toEqual('openid profile');
+  const client = getClient('test-client-id', ['openid', 'profile test']);
+  expect(client.scope).toEqual('openid profile test');
 });
