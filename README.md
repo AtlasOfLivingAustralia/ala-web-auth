@@ -4,6 +4,7 @@
 ![GitHub License](https://img.shields.io/github/license/AtlasOfLivingAustralia/ala-web-auth?style=flat-square)
 ![Bundle Size](https://img.shields.io/bundlephobia/min/ala-web-auth?label=bundle%20size&style=flat-square)
 
+NOTE: This is an preliminary test/proof-of-concept for SPA OIDC authentication with ALA systems, and is not guaranteed to be updated/released.
 ---
 
 > This package provides a utility library for authenticating with the ALA
